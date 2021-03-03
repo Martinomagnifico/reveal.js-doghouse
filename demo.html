@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Doghouse for Reveal.js</title>
+    <meta name="description" content="">
+    <meta name="author" content="Martinomagnifico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section class="center" data-transition="fade">
+                <h1>Doghouse</h1>
+                <h3>for Reveal.js</h3>
+            </section>
+            <section>
+                <section>
+                    <p>Doghouse is a plugin for Reveal.js 4 that will render Pug codeblocks when it starts, <i>but it also works with live editing</i>, which makes it great for presentations about Pug.</p>
+                    <p>Doghouse uses the standalone, latest version of Pug (as described here: <a href="https://github.com/pugjs/pug">github.com/pugjs/pug</a>). To avoid needing to use DogPack and get all kinds of issues with importers and modules, this plugin uses Require.js.</p>
+                </section>
+                <section>
+                    <p>Doghouse also works well with some of my other plugins: <a href="https://github.com/martinomagnifico/reveal.js-appearance" target="_blank">Appearance</a>, <a href="https://github.com/martinomagnifico/reveal.js-verticator" target="_blank">Verticator</a> and <a href="https://github.com/martinomagnifico/reveal.js-simplemenu" target="_blank">Simplemenu</a>.</p>
+                    <p class="large-text">Let's check out what Doghouse does:</p>
+                </section>
+            </section>
+            <section>
+                <section class="center">
+                    <h2>Example</h2>
+                </section>
+                <section class="center">
+                    <h4>
+                        <del>Dogtags</del> <ins>Tags</ins>
+                    </h4>
+                    <p class="text-left">Text at the start of a line (or after only white space) represents an HTML tag. Pug automatically closes the tag when compiling.</p>
+                    <div class="row" data-doghouse>
+                        <div class="col">
+                            <pre><code class="hljs nohighlight" contenteditable="true" data-doghouse-pug>a
+div
+ul
+ol
+li</code></pre>
+                        </div>
+                        <div class="col">
+                            <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                        </div>
+                    </div>
+                    <div class="fragment">
+                        <p class="text-left">Some kinds of tags are self-closing. This is automatically resolved.</p>
+                        <div class="row" data-doghouse>
+                            <div class="col">
+                                <pre><code class="hljs nohighlight" contenteditable="true" data-doghouse-pug>img
+hr
+meta
+link</code></pre>
+                            </div>
+                            <div class="col">
+                                <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="center">
+                    <h4>Tag content</h4>
+                    <p class="text-left">The first word of a block of Pug is the name of the tag. Any following words on that same line will be considered as the content of that tag.</p>
+                    <div class="row" data-doghouse>
+                        <div class="col">
+                            <pre><code class="hljs nohighlight" contenteditable="true" data-doghouse-pug>div The dog is in the dog house
+p The dog is on a leash</code></pre>
+                        </div>
+                        <div class="col">
+                            <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section class="center">
+                    <h4>Indents</h4>
+                    <p class="text-left">To make a nested structure, Pug uses indents to separate the levels.</p>
+                    <div class="row" data-doghouse>
+                        <div class="col">
+                            <pre><code class="hljs nohighlight" contenteditable="true" data-doghouse-pug>div
+    div
+        h3 Who let the dogs out?</code></pre>
+                        </div>
+                        <div class="col">
+                            <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                        </div>
+                    </div>
+                    <div class="fragment">
+                        <p class="text-left">To make it even denser, use colons instead of indents.</p>
+                        <div class="row" data-doghouse>
+                            <div class="col">
+                                <pre><code class="hljs nohighlight" contenteditable="true" data-doghouse-pug>div: div: h3 Who let the dogs out?</code></pre>
+                            </div>
+                            <div class="col">
+                                <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="center">
+                    <h4>Inline variables</h4>
+                    <p class="text-left">As a long as a variable is defined before use, it will render fine. You can use placeholders or assign the variable to a tag.</p>
+                    <div class="row" data-doghouse>
+                        <div class="col">
+                            <pre><code class="hljs nohighlight" contenteditable="true" data-doghouse-pug>- let bark = "woooof";
+p The dog says #{bark}
+p= `The dog says ${bark}`
+p= bark</code></pre>
+                        </div>
+                        <div class="col">
+                            <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section class="center">
+                    <h4>Object and array variables</h4>
+                    <p class="text-left">Local variables can be assigned in advance, or read from a database. Pug can read any JavaScript object or array format.</p>
+                    <div class="row" data-doghouse>
+                        <div class="col">
+                            <pre><code class="hljs nohighlight" contenteditable="true" data-doghouse-data>{"names": {"small": "Choco", "large": "Hector"}}
+</code></pre>
+                            <pre><code class="hljs nohighlight" contenteditable="true" data-doghouse-pug>p My dog is called #{names.small}.
+p The neighbors also have a dog. It is called #{names.large}.
+</code></pre>
+                        </div>
+                        <div class="col">
+                            <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section class="center">
+                    <h4>Code</h4>
+                    <p class="text-left">Pug allows inline JavaScript code for conditions and other logic.</p>
+                    <div class="row" data-doghouse>
+                        <div class="col">
+                            <pre><code class="hljs nohighlight" contenteditable="true" data-doghouse-pug>- let uglydog = true
+if uglydog
+    h3 You ain’t nothin’ but a hound dog, cryin’ all the time
+    h4=uglydog
+if uglydog == false 
+    h4 Nice doggie</code></pre>
+                        </div>
+                        <div class="col">
+                            <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section class="center">
+                    <h4>Iteration</h4>
+                    <p class="text-left">You can use either ‘each’ or ‘while’ for iteration.</p>
+                    <div class="row" data-doghouse>
+                        <div class="col">
+                            <pre><code class="hljs nohighlight" contenteditable="true" data-doghouse-pug>ul
+    each dog in ["Chichuahua", "Great dane", "German shepherd"]
+        li=dog</code></pre>
+                        </div>
+                        <div class="col">
+                            <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h4>Basic attributes</h4>
+                    <div class="row" data-doghouse>
+                        <div class="col">
+                            <pre><code class="hljs nohighlight" contenteditable="true" data-doghouse-pug>a A barking dog never bites</code></pre>
+                        </div>
+                        <div class="col">
+                            <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                        </div>
+                    </div>
+                    <p class="text-left">So where do you put the href and such?</p>
+                    <div class="fragment">
+                        <p class="text-left">As the first word is reserved for the tag, Pug uses parentheses for the attributes.</p>
+                        <div class="row" data-doghouse>
+                            <div class="col">
+                                <pre><code class="hljs nohighlight" contenteditable="true" data-doghouse-pug>a(href="http://w.wiki/89" target="_blank") A barking dog never bites</code></pre>
+                            </div>
+                            <div class="col">
+                                <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment">
+                            <p class="text-left">You can use commas, and put attributes on new lines if you like.</p>
+                            <div class="row" data-doghouse>
+                                <div class="col">
+                                    <pre><code class="hljs nohighlight" contenteditable="true" data-doghouse-pug>a(
+    href="http://w.wiki/89",
+    target="_blank"
+    ) A barking dog never bites</code></pre>
+                                </div>
+                                <div class="col">
+                                    <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h4>Disclaimer</h4>
+                    <p>I am not affiliated with the creators of Pug. I also do not have a dog.</p>
+                </section>
+            </section>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+    <script src="plugin/doghouse/doghouse.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            transition: "convex",
+            plugins: [
+                Doghouse,
+                RevealHighlight
+            ]
+        });
+    </script>
+    <script src="https://unpkg.com/requirejs@2.3.5/require.js"></script>
+    <script>
+        require({
+            paths: {
+                pug: "./plugin/pug/pug"
+            }
+        }, ["pug"], function() {
+            pug = require('pug');
+            window.pug = pug;
+        });
+    </script>
+</body>
+
+</html>

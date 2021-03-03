@@ -1,0 +1,16 @@
+{
+    "name": "reveal.js-doghouse",
+    "version": "1.0.0",
+    "description": "A plugin for Reveal.js 4 that will render inline Pug codeblocks for presentations with live editing.",
+    "keywords": "reveal, reveal.js, reveal-plugin, plugin, pug, jade",
+    "homepage": "https://github.com/Martinomagnifico/reveal.js-doghouse",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Martinomagnifico/reveal.js-doghouse.git"
+    },
+    "peerDependencies": {
+        "reveal.js": "^4.0"
+    },
+    "author": "Martijn De Jongh",
+    "license": "MIT, Copyright (C) 2021 Martijn De Jongh"
+}
