@@ -67,7 +67,7 @@ var Plugin = function Plugin() {
           });
         }
       });
-    }, 500);
+    }, 1000);
   };
 
   var init = function init(deck) {
