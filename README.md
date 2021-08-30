@@ -13,7 +13,6 @@ Doghouse uses the standalone, latest version of Pug (as described here: [github.
 Doghouse only does one thing: it renders Pug codeblocks, and can update them live.
 
 
-
 ## Installation
 
 Copy the doghouse folder to the plugins folder of the reveal.js folder, like this: `plugin/doghouse`.
