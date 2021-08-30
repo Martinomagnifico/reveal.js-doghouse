@@ -1,5 +1,7 @@
 # Doghouse
 
+[![Version](https://img.shields.io/npm/v/reveal.js-doghouse)](#) [![Downloads](https://img.shields.io/npm/dt/reveal.js-doghouse)](https://github.com/Martinomagnifico/reveal.js-doghouse/archive/refs/heads/master.zip)
+
 A plugin for [Reveal.js](https://revealjs.com) 4 that will render Pug codeblocks when it starts, *but it also works with live editing*, which makes it great for presentations about Pug. 
 
 [![Screenshot](screenshot.png)](https://martinomagnifico.github.io/reveal.js-doghouse/demo.html)
