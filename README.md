@@ -22,7 +22,7 @@ Copy the doghouse folder to the plugins folder of the reveal.js folder, like thi
 
 This plugin is published to, and can be installed from, npm.
 
-```javascript
+```console
 npm install reveal.js-doghouse
 ```
 The Doghouse plugin folder can then be referenced from `node_modules/reveal.js-doghouse/plugin/doghouse`. Next to the Doghouse plugin, **you will need Pug.js** (included in this package at `node_modules/reveal.js-doghouse/plugin/pug/pug.js`) and Require.js. The latter is on different CDNs, this example uses a CDN called Unpkg.
