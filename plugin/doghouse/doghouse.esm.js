@@ -4,7 +4,7 @@
  * https://github.com/Martinomagnifico
  *
  * Doghouse.js for Reveal.js 
- * Version 1.0.0
+ * Version 1.0.1
  * 
  * @license 
  * MIT licensed
@@ -25,7 +25,7 @@ var Plugin = function Plugin() {
     return html;
   };
 
-  var update = function update(dataBlock, pugBlock, htmlBlock) {
+  var update = function update(dataBlock, pugBlock, htmlBlock, deck) {
     var data = null;
 
     if (dataBlock) {
@@ -37,9 +37,11 @@ var Plugin = function Plugin() {
     var html = render(pugContent, data);
     html = html.trim();
     htmlBlock.textContent = html;
+  };
 
-    if (Reveal.hasPlugin('highlight')) {
-      Reveal.getPlugin('highlight').highlightBlock(htmlBlock);
+  var highlightBlock = function highlightBlock(deck, htmlBlock) {
+    if (deck.hasPlugin('highlight')) {
+      deck.getPlugin('highlight').highlightBlock(htmlBlock);
     }
   };
 
@@ -51,19 +53,23 @@ var Plugin = function Plugin() {
         var pugBlock = doghouseArea.querySelector("[data-doghouse-pug]") ? doghouseArea.querySelector("[data-doghouse-pug]") : null;
         var htmlBlock = doghouseArea.querySelector("[data-doghouse-html]") ? doghouseArea.querySelector("[data-doghouse-html]") : null;
         update(dataBlock, pugBlock, htmlBlock);
+        highlightBlock(deck, htmlBlock);
 
         if (dataBlock) {
           dataBlock.addEventListener('input', function () {
             update(dataBlock, pugBlock, htmlBlock);
+            highlightBlock(deck, htmlBlock);
           });
         }
 
         if (pugBlock) {
           pugBlock.addEventListener('input', function () {
             update(dataBlock, pugBlock, htmlBlock);
+            highlightBlock(deck, htmlBlock);
           });
           pugBlock.addEventListener('blur', function () {
             update(dataBlock, pugBlock, htmlBlock);
+            highlightBlock(deck, htmlBlock);
           });
         }
       });
