@@ -8,15 +8,18 @@
     <meta name="author" content="Martinomagnifico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reset.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="../dist/reset.css">
+    <link rel="stylesheet" href="../dist/reveal.css">
+    <link rel="stylesheet" href="../dist/theme/black.css">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
     <link rel="stylesheet" href="css/demo.css">
 </head>
 
 <body>
-    <div class="reveal">
+    <div class="reveal"><a class="github-corner" href="https://github.com/Martinomagnifico/reveal.js-doghouse" target="blank" title="View source on GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 55">
+                <path fill="currentColor" d="M27.5 11.2a16.3 16.3 0 0 0-5.1 31.7c.8.2 1.1-.3 1.1-.7v-2.8c-4.5 1-5.5-2.2-5.5-2.2-.7-1.9-1.8-2.4-1.8-2.4-1.5-1 .1-1 .1-1 1.6.1 2.5 1.7 2.5 1.7 1.5 2.5 3.8 1.8 4.7 1.4.2-1 .6-1.8 1-2.2-3.5-.4-7.3-1.8-7.3-8 0-1.8.6-3.3 1.6-4.4-.1-.5-.7-2.1.2-4.4 0 0 1.4-.4 4.5 1.7a15.6 15.6 0 0 1 8.1 0c3.1-2 4.5-1.7 4.5-1.7.9 2.3.3 4 .2 4.4 1 1 1.6 2.6 1.6 4.3 0 6.3-3.8 7.7-7.4 8 .6.6 1.1 1.6 1.1 3v4.6c0 .4.3.9 1.1.7a16.3 16.3 0 0 0-5.2-31.7"></path>
+            </svg></a>
         <div class="slides">
             <section class="center" data-transition="fade">
                 <h1>Doghouse</h1>
@@ -50,7 +53,7 @@ ol
 li</code></pre>
                         </div>
                         <div class="col">
-                            <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                            <pre><code class="hljs language-html" data-doghouse-html></code></pre>
                         </div>
                     </div>
                     <div class="fragment">
@@ -63,7 +66,7 @@ meta
 link</code></pre>
                             </div>
                             <div class="col">
-                                <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                                <pre><code class="hljs language-html" data-doghouse-html></code></pre>
                             </div>
                         </div>
                     </div>
@@ -77,13 +80,13 @@ link</code></pre>
 p The dog is on a leash</code></pre>
                         </div>
                         <div class="col">
-                            <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                            <pre><code class="hljs language-html" data-doghouse-html></code></pre>
                         </div>
                     </div>
                 </section>
                 <section class="center">
                     <h4>Indents</h4>
-                    <p class="text-left">To make a nested structure, Pug uses indents to separate the levels.</p>
+                    <p class="text-left">To make a nested structure, Pug uses indents to separate the levels. You can use either tabs or spaces, but not both at the same time in a single file.</p>
                     <div class="row" data-doghouse>
                         <div class="col">
                             <pre><code class="hljs nohighlight" contenteditable="true" data-doghouse-pug>div
@@ -91,7 +94,7 @@ p The dog is on a leash</code></pre>
         h3 Who let the dogs out?</code></pre>
                         </div>
                         <div class="col">
-                            <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                            <pre><code class="hljs language-html" data-doghouse-html></code></pre>
                         </div>
                     </div>
                     <div class="fragment">
@@ -101,7 +104,7 @@ p The dog is on a leash</code></pre>
                                 <pre><code class="hljs nohighlight" contenteditable="true" data-doghouse-pug>div: div: h3 Who let the dogs out?</code></pre>
                             </div>
                             <div class="col">
-                                <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                                <pre><code class="hljs language-html" data-doghouse-html></code></pre>
                             </div>
                         </div>
                     </div>
@@ -117,7 +120,7 @@ p= `The dog says ${bark}`
 p= bark</code></pre>
                         </div>
                         <div class="col">
-                            <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                            <pre><code class="hljs language-html" data-doghouse-html></code></pre>
                         </div>
                     </div>
                 </section>
@@ -133,7 +136,7 @@ p The neighbors also have a dog. It is called #{names.large}.
 </code></pre>
                         </div>
                         <div class="col">
-                            <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                            <pre><code class="hljs language-html" data-doghouse-html></code></pre>
                         </div>
                     </div>
                 </section>
@@ -150,7 +153,7 @@ if uglydog == false
     h4 Nice doggie</code></pre>
                         </div>
                         <div class="col">
-                            <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                            <pre><code class="hljs language-html" data-doghouse-html></code></pre>
                         </div>
                     </div>
                 </section>
@@ -164,7 +167,7 @@ if uglydog == false
         li=dog</code></pre>
                         </div>
                         <div class="col">
-                            <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                            <pre><code class="hljs language-html" data-doghouse-html></code></pre>
                         </div>
                     </div>
                 </section>
@@ -175,7 +178,7 @@ if uglydog == false
                             <pre><code class="hljs nohighlight" contenteditable="true" data-doghouse-pug>a A barking dog never bites</code></pre>
                         </div>
                         <div class="col">
-                            <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                            <pre><code class="hljs language-html" data-doghouse-html></code></pre>
                         </div>
                     </div>
                     <p class="text-left">So where do you put the href and such?</p>
@@ -186,7 +189,7 @@ if uglydog == false
                                 <pre><code class="hljs nohighlight" contenteditable="true" data-doghouse-pug>a(href="http://w.wiki/89" target="_blank") A barking dog never bites</code></pre>
                             </div>
                             <div class="col">
-                                <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                                <pre><code class="hljs language-html" data-doghouse-html></code></pre>
                             </div>
                         </div>
                         <div class="fragment">
@@ -199,7 +202,7 @@ if uglydog == false
     ) A barking dog never bites</code></pre>
                                 </div>
                                 <div class="col">
-                                    <pre class="size-max"><code class="hljs language-html" data-doghouse-html></code></pre>
+                                    <pre><code class="hljs language-html" data-doghouse-html></code></pre>
                                 </div>
                             </div>
                         </div>
@@ -214,12 +217,12 @@ if uglydog == false
             </section>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+    <script src="../dist/reveal.js"></script>
     <script src="plugin/doghouse/doghouse.js"></script>
     <script src="plugin/highlight/highlight.js"></script>
     <script>
         Reveal.initialize({
-            transition: "convex",
+            transition: "slide",
             plugins: [
                 Doghouse,
                 RevealHighlight

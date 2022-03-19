@@ -68,3 +68,13 @@
       outline: none; }
   .reveal pre + pre {
     margin-top: 20px; }
+
+a.github-corner {
+  position: absolute;
+  z-index: 1;
+  width: clamp(50px, 8vmax, 80px);
+  line-height: 0;
+  color: rgba(255, 255, 255, 0.5); }
+
+a.github-corner:hover {
+  color: white; }

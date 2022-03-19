@@ -4,7 +4,7 @@
 
 A plugin for [Reveal.js](https://revealjs.com) 4 that will render Pug codeblocks when it starts, *but it also works with live editing*, which makes it great for presentations about Pug. 
 
-[![Screenshot](screenshot.png)](https://martinomagnifico.github.io/reveal.js-doghouse/demo.html)
+[![Screenshot](https://martinomagnifico.github.io/reveal.js-doghouse/screenshot.png)](https://martinomagnifico.github.io/reveal.js-doghouse/demo.html)
 
 Doghouse uses the standalone, latest version of Pug (as described here: [github.com/pugjs/pug](https://github.com/pugjs/pug)). To avoid needing to use DogPack and get all kinds of issues with importers and modules, this plugin uses Require.js.
 
