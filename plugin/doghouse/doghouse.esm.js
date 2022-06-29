@@ -88,4 +88,4 @@ var Plugin = function Plugin() {
   };
 };
 
-export default Plugin;
+export { Plugin as default };

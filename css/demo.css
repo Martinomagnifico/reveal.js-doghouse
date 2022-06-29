@@ -1,44 +1,55 @@
 .backgrounds {
-  background: #1a1626; }
+  background: #1a1626;
+}
 
 .slides {
   opacity: 0;
-  -webkit-transition: opacity .5s ease;
-  -o-transition: opacity .5s ease;
-  transition: opacity .5s ease; }
+  -webkit-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
 
 .reveal.ready .slides {
-  opacity: 1; }
+  opacity: 1;
+}
 
 .reveal .row {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
-  .reveal .row .col {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column; }
-    .reveal .row .col:first-child {
-      padding-right: 10px; }
-    .reveal .row .col:last-child {
-      padding-left: 10px; }
+  display: flex;
+}
+.reveal .row .col {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.reveal .row .col:first-child {
+  padding-right: 10px;
+}
+.reveal .row .col:last-child {
+  padding-left: 10px;
+}
 
 .reveal p {
   font-size: 24px;
-  margin-top: 30px; }
-  .reveal p.text-left {
-    text-align: left; }
-  .reveal p.large-text {
-    font-size: 32px; }
-  .reveal p i {
-    font-style: italic; }
+  margin-top: 30px;
+}
+.reveal p.text-left {
+  text-align: left;
+}
+.reveal p.large-text {
+  font-size: 32px;
+}
+.reveal p i {
+  font-style: italic;
+}
 
 .reveal pre {
   font-size: 18px;
@@ -55,26 +66,33 @@
   word-break: break-all;
   word-wrap: break-word;
   white-space: pre-wrap;
-  cursor: default; }
-  .reveal pre:focus {
-    outline: none; }
-  .reveal pre code {
-    border-radius: 4px;
-    padding: 10px 15px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    line-height: 30px; }
-    .reveal pre code:focus {
-      outline: none; }
-  .reveal pre + pre {
-    margin-top: 20px; }
+  cursor: default;
+}
+.reveal pre:focus {
+  outline: none;
+}
+.reveal pre code {
+  border-radius: 4px;
+  padding: 10px 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 30px;
+}
+.reveal pre code:focus {
+  outline: none;
+}
+.reveal pre + pre {
+  margin-top: 20px;
+}
 
 a.github-corner {
   position: absolute;
   z-index: 1;
   width: clamp(50px, 8vmax, 80px);
   line-height: 0;
-  color: rgba(255, 255, 255, 0.5); }
+  color: rgba(255, 255, 255, 0.5);
+}
 
 a.github-corner:hover {
-  color: white; }
+  color: white;
+}
